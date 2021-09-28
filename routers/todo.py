@@ -8,7 +8,7 @@ router = APIRouter()
 async def todo():
 	pass
 
-@router.get("/todo/{task_id}")
+@router.get("/todo/{id}")
 async def todo():
 	pass
 
