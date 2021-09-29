@@ -10,7 +10,7 @@ from api.db import get_db
 router = APIRouter(
 	prefix="/assignee/v1",
 	tags=["assignee/v1"],
-	responses={404: {"descriptoin": "Not found"}}
+	responses={404: {"description": "Not found"}}
 )
 
 
@@ -18,7 +18,7 @@ router = APIRouter(
 async def get_all_assignees(db: AsyncSession = Depends(get_db)):
 	assignees = await assignee_crud.get_all_assignees(db)
 	if assignees is None:
-		raise HTTPException(status_code=422, detail="Assignees not found")
+		raise HTTPException(status_code=404, detail="Assignees not found")
 	
 	return assignees
 
@@ -27,7 +27,7 @@ async def get_all_assignees(db: AsyncSession = Depends(get_db)):
 async def get_assignee(assignee_id: int, db: AsyncSession = Depends(get_db)):
 	assignee = await assignee_crud.get_assignee(db, assignee_id = assignee_id )
 	if assignee is None:
-		raise HTTPException(status_code=422, detail="Assignees not found")
+		raise HTTPException(status_code=404, detail="Assignees not found")
 
 	return assignee
 
