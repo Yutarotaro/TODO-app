@@ -17,6 +17,7 @@ router = APIRouter(
 @router.get("/", response_model=List[assignee_schema.AssigneeResponse])
 async def get_all_assignees(db: AsyncSession = Depends(get_db)):
 	assignees = await assignee_crud.get_all_assignees(db)
+
 	if assignees is None:
 		raise HTTPException(status_code=422, detail="Assignees not found")
 	
@@ -26,6 +27,7 @@ async def get_all_assignees(db: AsyncSession = Depends(get_db)):
 @router.get("/{assignee_id}", response_model=Optional[assignee_schema.AssigneeResponse])
 async def get_assignee(assignee_id: int, db: AsyncSession = Depends(get_db)):
 	assignee = await assignee_crud.get_assignee(db, assignee_id = assignee_id )
+
 	if assignee is None:
 		raise HTTPException(status_code=422, detail="Assignees not found")
 
@@ -34,6 +36,7 @@ async def get_assignee(assignee_id: int, db: AsyncSession = Depends(get_db)):
 @router.post("/", response_model=assignee_schema.AssigneeResponse)
 async def add_assignee(assignee_body: assignee_schema.Assignee, db: AsyncSession = Depends(get_db)):
 	assignee =  await assignee_crud.add_assignee(db, assignee_body)
+
 	if assignee is None:
 		raise HTTPException(status_code=404, detail="Assignee not found")
 
