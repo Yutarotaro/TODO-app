@@ -14,7 +14,7 @@ class Assignee(Base):
 	assignee_id = Column(Integer, primary_key=True, autoincrement=True)
 	name = Column(String(50))
 	role = Column(String(50))
-	children = relationship("TodoAssignee")
+	children = relationship("AssignTodo")
 
 class Todo(Base):
 	__tablename__ = "todo"
@@ -26,9 +26,9 @@ class Todo(Base):
 	created_at = Column(TIMESTAMP)
 	updated_at = Column(TIMESTAMP)
 	deleted_at = Column(TIMESTAMP)
-	children = relationship("TodoAssignee")
+	children = relationship("AssignTodo")
 
-class TodoAssignee(Base):
+class AssignTodo(Base):
 	__tablename__ = "todo_assignee"
 
 	todo_assignee_id = Column(Integer, primary_key=True, autoincrement=True)
