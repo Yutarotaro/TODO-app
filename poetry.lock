@@ -241,7 +241,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "0da50b8978488b09cb678d878a905ec9a43fac84316d0336b838241e5f7d32ca"
+content-hash = "6c126bb71d543568652f20d045df7298f74e756729f5bd33c1cdc6ef3ff49e95"
 
 [metadata.files]
 aiomysql = [

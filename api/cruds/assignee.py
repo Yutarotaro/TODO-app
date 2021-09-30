@@ -19,17 +19,17 @@ async def add_assignee(db: AsyncSession, add_schema: assignee_schema.AssigneeRes
 
 #get all assignees
 async def get_all_assignees(db: AsyncSession)-> List[assignee_schema.AssigneeResponse]:
-		result: Result = await (
-			db.execute(
-				select(
-					assignee_model.Assignee.assignee_id,
-					assignee_model.Assignee.name,
-					assignee_model.Assignee.role
-				)
+	result: Result = await (
+		db.execute(
+			select(
+				assignee_model.Assignee.assignee_id,
+				assignee_model.Assignee.name,
+				assignee_model.Assignee.role
 			)
 		)
+	)
 
-		return  result.all()
+	return  result.all()
 
 #get assignee of name:'name'
 async def get_assignee(db: AsyncSession, assignee_id:int)-> Optional[assignee_model.Assignee]:
