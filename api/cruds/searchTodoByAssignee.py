@@ -26,7 +26,6 @@ async def get_all_todo_assignees(assignee_id, db: AsyncSession)-> List[int]:
 	for e in result.all():
 		results.append(e[0])
 	
-	print(results)
 
 	return results
 
