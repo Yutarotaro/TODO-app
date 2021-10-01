@@ -85,7 +85,7 @@ async def update_assignTodo(todo_assignee_id: int, assignTodo_body: assignTodo_s
 	assignee = await assignee_crud.get_assignee(db, assignTodo_body.assignee_id)
 	#assignee_idをもつassigneeが存在しなければ、404
 	if assignee is None:
-		raise HTTPException(status_code=404, detail=" assignee not found")
+		raise HTTPException(status_code=404, detail="Assignee not found")
 
 	return await assignTodo_crud.update_assignTodo(db, assignTodo_body, original=assignTodo)
 
