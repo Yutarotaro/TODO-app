@@ -8,8 +8,8 @@ import api.cruds.assignee as assignee_crud
 from api.db import get_db
 
 router = APIRouter(
-	prefix="/assignee/v1",
-	tags=["assignee/v1"],
+	prefix="/v1/assignee",
+	tags=["v1/assignee"],
 	responses={404: {"description": "Not found"}}
 )
 
