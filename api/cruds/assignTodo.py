@@ -15,7 +15,6 @@ async def add_assignTodo(db: AsyncSession, add_schema: assignTodo_schema.AssignT
     db.add(assignTodo)
     await db.commit()
     await db.refresh(assignTodo)
-    print(assignTodo.todo_assignee_id)
     return assignTodo
 
 
