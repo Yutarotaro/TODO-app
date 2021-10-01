@@ -29,14 +29,12 @@ async def get_todos_by_assignee(assignee_id: int, db: AsyncSession = Depends(get
 	
 
 	todo_ids:List[int] = await search_crud.get_all_todo_assignees(assignee_id, db)
-<<<<<<< Updated upstream
+
 	#assignee_idに紐づいたtodoがなければ、404
 	if todo_ids is None:
 		raise HTTPException(status_code=404, detail=f"Todo of assignee_id {assignee_id} not found")
 	
-=======
 
->>>>>>> Stashed changes
 	todos:List[todo_schema.TodoResponse] = await search_crud.get_all_todos_by_todo_id(todo_ids, db)
 
 	return todos
