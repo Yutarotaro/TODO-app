@@ -10,7 +10,7 @@ from api.db import get_db
 router = APIRouter(
 	prefix="/assignee/v1",
 	tags=["assignee/v1"],
-	responses={404: {"descriptoin": "Not found"}}
+	responses={404: {"description": "Not found"}}
 )
 
 
@@ -38,7 +38,7 @@ async def add_assignee(assignee_body: assignee_schema.Assignee, db: AsyncSession
 	assignee =  await assignee_crud.add_assignee(db, assignee_body)
 
 	if assignee is None:
-		raise HTTPException(status_code=404, detail="Assignee not found")
+		raise HTTPException(status_code=404, detail="Input Assignee not registered")
 
 	return assignee
 

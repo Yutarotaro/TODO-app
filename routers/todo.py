@@ -41,7 +41,7 @@ async def add_todo(todo_body: todo_schema.Todo, db: AsyncSession = Depends(get_d
 	todo =  await todo_crud.add_todo(db, todo_body)
 
 	if todo is None:
-		raise HTTPException(status_code=404, detail="Todo not found")
+		raise HTTPException(status_code=404, detail="Input Todo not registered")
 
 	return todo
 
