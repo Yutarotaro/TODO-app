@@ -80,7 +80,7 @@ async def update_assignTodo(todo_assignee_id: int, assignTodo_body: assignTodo_s
 	todo = await todo_crud.get_todo(db, assignTodo_body.todo_id)
 	#todo_idをもつtodoが存在しなければ、404
 	if todo is None:
-		raise HTTPException(status_code=404, detail=" todo not found")
+		raise HTTPException(status_code=404, detail="Todo not found")
 
 	assignee = await assignee_crud.get_assignee(db, assignTodo_body.assignee_id)
 	#assignee_idをもつassigneeが存在しなければ、404
