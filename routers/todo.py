@@ -8,8 +8,8 @@ import api.cruds.todo as todo_crud
 from api.db import get_db
 
 router = APIRouter(
-	prefix="/todo/v1",
-	tags=["todo/v1"],
+	prefix="/v1/todo",
+	tags=["v1/todo"],
 	responses={404: {"description": "Not found"}}
 )
 
