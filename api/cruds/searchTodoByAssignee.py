@@ -58,6 +58,5 @@ async def get_all_todos_by_todo_id(todo_ids, db: AsyncSession)-> List[todo_schem
 												updated_at=res.updated_at,
 												deleted_at=res.deleted_at))
 
-		print(results)
 
 	return results
