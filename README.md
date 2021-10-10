@@ -10,10 +10,14 @@ TODOアプリのためのAPI
 - todoへのassigneeの割り当て
 - 特定のassigneeに割り当てられたtodoの一覧検索
 
-## 使用方法
+## 使用方法(作成中)
 
 ```bash
-$ git clone && cd TODO-app 
+$ git clone git@github.com:Yutarotaro/TODO-app.git && cd TODO-app 
+$ vi .env
+
+$ docker-compose build
+$ docker-compose up
 ```
 
 ## データベースモデル
