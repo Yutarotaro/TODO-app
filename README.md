@@ -9,7 +9,7 @@ TODOアプリのためのAPI
 - assignee(担当者)の追加、更新、削除
 - todoへのassigneeの割り当て
 - 特定のassigneeに割り当てられたtodoの一覧検索
-- 
+
 ## データベースモデル
 <img width="950" alt="スクリーンショット 2021-10-10 12 47 15" src="https://user-images.githubusercontent.com/53333096/136681022-ea402e42-937f-41dc-aa96-b54fda9374c7.png">
 
